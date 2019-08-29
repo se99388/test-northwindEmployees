@@ -1,0 +1,27 @@
+<form #myForm="ngForm">
+
+    <input #firstName="ngModel" required minlength="3" type="text" placeholder="firstName..." [(ngModel)]="employee.firstName" name="firstName">
+    <span *ngIf="firstName.errors?.required && firstName.touched">Missing firstName.</span>
+    <span *ngIf="firstName.errors?.minlength && firstName.touched">firstName too short.</span>
+    <br><br>
+    <input #lastName="ngModel" required minlength="3" type="text" placeholder="lastName..." [(ngModel)]="employee.lastName" name="lastName">
+    <span *ngIf="lastName.errors?.required && lastName.touched">Missing lastName.</span>
+    <span *ngIf="lastName.errors?.minlength && lastName.touched">lastName too short.</span>
+    <br><br>
+    <input #title="ngModel" required minlength="3" type="text" placeholder="title..." [(ngModel)]="employee.title" name="title">
+    <span *ngIf="title.errors?.required && title.touched">Missing title.</span>
+    <span *ngIf="title.errors?.minlength && title.touched">title too short.</span>
+    <br><br>
+    <input #location="ngModel" required minlength="3" type="text" placeholder="location..." [(ngModel)]="employee.location" name="location">
+    <span *ngIf="location.errors?.required && location.touched">Missing loaction.</span>
+    <span *ngIf="location.errors?.minlength && location.touched">loaction too short.</span>
+    <br><br>
+    <input #birthDate="ngModel" required minlength="3" type="text" placeholder="birthDate..." [(ngModel)]="employee.birthDate" name="lastName">
+    <span *ngIf="birthDate.errors?.required && birthDate.touched">Missing birthDate.</span>
+    <span *ngIf="birthDate.errors?.minlength && birthDate.touched">birthDate too short.</span>
+    <br><br>
+    
+
+    <button [disabled]="myForm.form.invalid" (click)="send()">Add Employee</button>
+
+</form>

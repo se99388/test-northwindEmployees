@@ -1,0 +1,14 @@
+table, tr, td, th{
+    border: 1px solid black;
+}
+.table{
+    height: 80%;
+    overflow: auto;
+    border: 1px solid blue;
+    display: inline-block;
+}
+.largeImage{
+    position: fixed;
+    left: 10px;
+    top: 100px;
+}

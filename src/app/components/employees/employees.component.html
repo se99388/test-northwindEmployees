@@ -1,0 +1,28 @@
+<div class="largeImage">
+    <img #previewImage>
+    <p>{{previewFullNameImage}}</p>
+</div>
+<div class="table">
+    <table>
+        <tr>
+            <th>Full name </th>
+            <th>Title</th>
+            <th>Location</th>
+            <th>Birth Date</th>
+            <th>Image</th>
+        </tr>
+        <tr *ngFor="let e of allEmployees">
+            <td #fullName>{{e.firstName}} {{e.lastName}}</td>
+            <td>{{e.title}}</td>
+            <td>{{e.city}}, {{e.country}}</td>
+            <td>
+                <app-date birthDate="{{e.birthDate}}"></app-date>
+            </td>
+            <td>
+                <app-thumbnail imageSource="/assets/images/{{e.firstName}}_{{e.lastName}}.jpg" widthImage="100" heightImage="100" (imageClick)="previewImage.src = $event"
+                    (imageOut)="previewImage.src = $event" (click)="details(fullName)" (mouseout)="removeDetails()"></app-thumbnail>
+            </td>
+        </tr>
+
+    </table>
+</div>
